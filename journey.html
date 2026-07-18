@@ -1,287 +1,167 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Operation Wake is a family mission built around faith, freedom, education, exploration, and the journey toward life on the water." />
-  <title>Operation Wake | Leave More Than a Wake</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header class="site-header">
-  <a class="brand" href="index.html" aria-label="Operation Wake home">
-    <img src="assets/operation-wake-logo.png" alt="Operation Wake logo" />
-    <span>OPERATION WAKE</span>
-  </a>
-  <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
-  <nav class="nav-links" aria-label="Primary navigation">
-    <a href="index.html">Home</a>
-    <a href="our-story.html">Our Story</a>
-    <a href="mission.html">Mission</a>
-    <a href="journey.html">Journey</a>
-    <a href="videos.html">Videos</a>
-    <a href="resources.html">Resources</a>
-    <a href="support.html">Support</a>
-  </nav>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="The living journey of Operation Wake — building the foundation, becoming sailors, becoming cruisers, and preparing for bluewater passages when the family is ready." name="description"/>
+<title>Journey | Operation Wake</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet">
+</link></head>
+<body class="inner-page">
+<header class="site-header">
+<a aria-label="Operation Wake home" class="brand" href="index.html">
+<img alt="Operation Wake logo" src="assets/operation-wake-logo.png"/>
+<span>OPERATION WAKE</span>
+</a>
+<button aria-expanded="false" aria-label="Open navigation" class="menu-toggle">☰</button>
+<nav aria-label="Primary navigation" class="nav-links">
+<a href="index.html">Home</a>
+<a href="our-story.html">Our Story</a>
+<a href="mission.html">Mission</a>
+<a aria-current="page" href="journey.html">Journey</a>
+<a href="videos.html">Videos</a>
+<a href="resources.html">Expedition Library</a>
+<a href="support.html">Support</a>
+</nav>
 </header>
-
-  <main id="top">
-    <section class="hero">
-      <div class="hero-overlay"></div>
-      <div class="hero-grid"></div>
-
-      <div class="hero-content">
-        <p class="eyebrow reveal">A FAMILY MISSION IN MOTION</p>
-        <img class="hero-logo reveal reveal-delay-1" src="assets/operation-wake-logo.png" alt="Operation Wake emblem" />
-        <h1 class="reveal reveal-delay-2">LEAVE MORE THAN A WAKE.</h1>
-        <p class="hero-copy reveal reveal-delay-3">
-          Before the boat, before the crossing, before the horizon becomes home, there is the work of
-          becoming ready. We are documenting every mile of that journey.
-        </p>
-        <div class="hero-actions reveal reveal-delay-4">
-          <a class="button button-primary" href="our-story.html">Start at the Beginning</a>
-          <a class="button button-secondary" href="#dashboard">Mission Status</a>
-        </div>
-        <div class="hero-status reveal reveal-delay-4" aria-label="Current Operation Wake status">
-          <span><strong>Current Phase</strong> <span data-config="current-phase">Building the Foundation</span>
-          <span><strong>Home Port</strong> <span data-config="home-port">Ocala, Florida</span>
-        </div>
-      </div>
-
-      <a class="scroll-cue" href="#mission" aria-label="Scroll to mission">
-        <span>SCROLL</span>
-        <span class="scroll-line"></span>
-      </a>
-    </section>
-
-    <section id="mission" class="section section-light">
-      <div class="section-heading">
-        <p class="eyebrow dark">WHY WE STARTED</p>
-        <h2>The journey begins before the boat.</h2>
-      </div>
-
-      <div class="mission-grid">
-        <div class="mission-copy">
-          <p>
-            Operation Wake follows our family as we simplify our lives, strengthen our finances,
-            learn the skills of seamanship, and work toward a future of exploration and education afloat.
-          </p>
-          <p>
-            We are not waiting for life to happen to us. We are building it deliberately, one decision,
-            one sacrifice, and one mile at a time.
-          </p>
-        </div>
-
-        <aside class="mission-card">
-          <span class="card-number">01</span>
-          <h3>Our North Star</h3>
-          <p>
-            Create a life where our children learn from the world itself, where family time is protected,
-            and where adventure becomes part of the curriculum.
-          </p>
-        </aside>
-      </div>
-    </section>
-
-
-    <section class="section crew-section">
-      <div class="section-heading split-heading">
-        <div>
-          <p class="eyebrow dark">MEET THE CREW</p>
-          <h2>The people behind the wake.</h2>
-        </div>
-        <p class="crew-intro">
-          Five lives, one direction. We are preparing together, learning together, and building a future that keeps family at the center.
-        </p>
-      </div>
-      <div class="crew-grid" data-crew-grid></div>
-    </section>
-
-    <section id="dashboard" class="section dashboard-section">
-      <div class="section-heading split-heading">
-        <div>
-          <p class="eyebrow">MISSION DASHBOARD</p>
-          <h2>The plan is alive.</h2>
-        </div>
-        <p class="dashboard-intro">
-          A transparent snapshot of where Operation Wake stands today. These markers will grow with the mission.
-        </p>
-      </div>
-
-      <div class="dashboard-grid">
-        <article class="dashboard-card dashboard-card-wide">
-          <div class="dashboard-card-top">
-            <span class="status-dot"></span>
-            <span>ACTIVE MISSION</span>
-          </div>
-          <h3>Build the Foundation</h3>
-          <p>
-            Establish the platform, eliminate unnecessary expenses, expand flexible income,
-            learn continuously, and prepare the family for responsible cruising.
-          </p>
-          
-          <div class="mission-progress">
-            <div class="progress-row">
-              <div><span>Website Foundation</span><strong data-progress-label="website">100%</strong></div>
-              <div class="progress-track"><span data-progress="website"></span></div>
-            </div>
-            <div class="progress-row">
-              <div><span>Public Launch Platform</span><strong data-progress-label="launchPlatform">70%</strong></div>
-              <div class="progress-track"><span data-progress="launchPlatform"></span></div>
-            </div>
-            <div class="progress-row">
-              <div><span>Flexible Income Systems</span><strong data-progress-label="incomeSystems">35%</strong></div>
-              <div class="progress-track"><span data-progress="incomeSystems"></span></div>
-            </div>
-            <div class="progress-row">
-              <div><span>Boat & Training Preparation</span><strong data-progress-label="boatPreparation">20%</strong></div>
-              <div class="progress-track"><span data-progress="boatPreparation"></span></div>
-            </div>
-          </div>
-
-        </article>
-
-        <article class="dashboard-card metric-card">
-          <span class="metric-label">CURRENT PHASE</span>
-          <strong>FOUNDATION</strong>
-          <p>Phase 1 of 4 — building readiness, not racing a date</p>
-        </article>
-
-        <article class="dashboard-card metric-card">
-          <span class="metric-label">CURRENT HOME PORT</span>
-          <strong>OCALA</strong>
-          <p>Florida, United States</p>
-        </article>
-
-        <article class="dashboard-card metric-card">
-          <span class="metric-label">MISSION PILLARS</span>
-          <strong>4</strong>
-          <p>Explore · Educate · Steward · Inspire</p>
-        </article>
-
-        <article class="dashboard-card metric-card">
-          <span class="metric-label">VOYAGE STATUS</span>
-          <strong>UNDERWAY</strong>
-          <p>The journey began before casting off</p>
-        </article>
-      </div>
-    </section>
-
-    <section id="journey" class="section section-dark">
-      <div class="section-heading">
-        <p class="eyebrow">HOW THE JOURNEY ADVANCES</p>
-        <h2>Readiness unlocks the next horizon.</h2>
-      </div>
-
-      <div class="countdown-panel">
-        <div class="countdown-copy">
-          <span class="status-pill">CURRENT PHASE</span>
-          <h3>Building the Foundation</h3>
-          <p>
-            We are not racing toward a date. We are building the knowledge, confidence, financial
-            stability, and family rhythm required to make each next chapter possible.
-          </p>
-        </div>
-
-        <div class="phase-track" style="margin-top:0;border-top:none;" aria-label="Operation Wake phases">
-          <span class="phase active"><b>01</b> Foundation</span>
-          <span class="phase"><b>02</b> Becoming Sailors</span>
-          <span class="phase"><b>03</b> Becoming Cruisers</span>
-          <span class="phase"><b>04</b> Bluewater</span>
-        </div>
-      </div>
-
-      <div class="progress-grid">
-        <article class="reveal-on-scroll">
-          <span>01</span>
-          <h3>Foundation</h3>
-          <p>Reduce debt, grow income, build the platform, and protect the family plan.</p>
-          <a href="mission.html">Explore the mission →</a>
-        </article>
-        <article class="reveal-on-scroll">
-          <span>02</span>
-          <h3>Becoming Sailors</h3>
-          <p>Gain sailing experience, complete training, inspect boats, and sharpen seamanship.</p>
-          <a href="resources.html">Follow what we learn →</a>
-        </article>
-        <article class="reveal-on-scroll">
-          <span>03</span>
-          <h3>Becoming Cruisers & Beyond</h3>
-          <p>Acquire the right boat, begin coastal cruising, and let the classroom widen toward bluewater.</p>
-          <a href="journey.html">See the full journey →</a>
-        </article>
-      </div>
-    </section>
-
-
-    <section class="section logbook-section">
-      <div class="logbook-card">
-        <div class="logbook-meta">
-          <span>CAPTAIN'S LOG</span>
-          <strong>ENTRY 001</strong>
-        </div>
-        <div class="logbook-content">
-          <p class="eyebrow">THE WEBSITE GOES LIVE</p>
-          <h2>The wake has officially begun.</h2>
-          <p>
-            Operation Wake is no longer only a family conversation. The platform is live, the mission is underway,
-            and the work ahead is visible. This is the first marker in a much longer voyage.
-          </p>
-          <a class="button button-primary" href="journey.html">Follow the Journey</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="watch" class="section section-light">
-      <div class="section-heading split-heading">
-        <div>
-          <p class="eyebrow dark">FOLLOW THE BUILD</p>
-          <h2>The story is already underway.</h2>
-        </div>
-        <a class="text-link" href="videos.html">Visit the video hub ↗</a>
-      </div>
-
-      <div class="video-placeholder">
-        <div class="play-button">▶</div>
-        <div>
-          <p class="eyebrow">LATEST EPISODE</p>
-          <h3>Welcome to Operation Wake</h3>
-          <p>Our first episode will live here once the channel launches.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="support" class="section support-section">
-      <div class="support-content">
-        <p class="eyebrow">JOIN THE CREW</p>
-        <h2>Help us turn the horizon into a home.</h2>
-        <p>
-          Follow the mission, share the story, wear the mark, or connect with us through real estate.
-          Every contribution to the journey moves the wake a little farther.
-        </p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="mailto:hello@operationwake.com">Contact Operation Wake</a>
-          <a class="button button-secondary" href="support.html">Explore Ways to Help</a>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer-brand">
-      <img src="assets/operation-wake-logo.png" alt="" />
-      <div>
-        <strong>OPERATION WAKE</strong>
-        <span>Leave More Than a Wake.</span>
-      </div>
-    </div>
-    <p>© <span id="year"></span> Operation Wake. All rights reserved.</p>
-  </footer>
-
-  <script src="site-config.js"></script>
+<main>
+<section class="page-hero simple-hero">
+<div class="page-hero-overlay"></div>
+<div class="page-hero-content">
+<p class="eyebrow">THE JOURNEY</p>
+<h1>CAPABILITY BEFORE CALENDAR.</h1>
+<p>We are not racing toward a date. We are building the knowledge, confidence, financial stability, and family rhythm required to make each next chapter possible.</p>
+</div>
+</section>
+<section class="section section-dark" style="padding-top:clamp(45px,6vw,70px);padding-bottom:clamp(45px,6vw,70px);">
+<article class="dashboard-card dashboard-card-wide">
+<div class="dashboard-card-top">
+<span class="status-dot"></span>
+<span>CURRENT POSITION</span>
+</div>
+<h3>Phase 1 · Building the Foundation</h3>
+<p>
+        We are eliminating debt, growing our income, launching Operation Wake, and searching
+        for the right first cruising sailboat.
+      </p>
+<div class="position-card-row">
+<div><span class="metric-label">STATUS</span><strong>In Progress</strong></div>
+<div><span class="metric-label">LAST UPDATED</span><strong>July 2026</strong></div>
+</div>
+</article>
+</section>
+<section class="section section-dark">
+<div class="section-heading">
+<p class="eyebrow">WHERE WE STAND TODAY</p>
+<h2>Building the foundation.</h2>
+<p style="max-width:760px;color:rgba(255,255,255,.68);line-height:1.8;">
+        The current mission is simple: strengthen the family, reduce financial pressure, grow flexible income,
+        learn continuously, and prepare to purchase the right first cruising boat when the foundation is ready.
+      </p>
+</div>
+<div aria-label="Operation Wake phases" class="phase-track">
+<span class="phase active"><b>01</b> Foundation</span>
+<span class="phase"><b>02</b> Becoming Sailors</span>
+<span class="phase"><b>03</b> Becoming Cruisers</span>
+<span class="phase"><b>04</b> Bluewater</span>
+</div>
+</section>
+<section class="section section-light">
+<div class="section-heading">
+<p class="eyebrow dark">THE FOUR CHAPTERS</p>
+<h2>Progress measured by readiness.</h2>
+</div>
+<div class="timeline">
+<div class="timeline-item">
+<span class="timeline-year">PHASE 01</span>
+<div>
+<h3>Building the Foundation</h3>
+<p>Eliminate consumer debt, strengthen savings, grow flexible income, simplify our lives, launch Operation Wake publicly, and build the financial margin needed to buy the right boat without forcing the decision.</p>
+<div class="success-box"><span class="success-label">Success Looks Like</span><p>Our family is financially and practically ready to purchase a cruising sailboat.</p></div>
+</div>
+</div>
+<div class="timeline-item">
+<span class="timeline-year">PHASE 02</span>
+<div>
+<h3>Becoming Sailors</h3>
+<p>Purchase our first cruising boat, learn every system, develop safe routines, practice docking and anchoring, build weather judgment, handle maintenance, and discover what living and homeschooling aboard actually require from our family.</p>
+<div class="success-box"><span class="success-label">Success Looks Like</span><p>The boat is trusted, the crew is capable, and daily life afloat feels sustainable rather than temporary.</p></div>
+</div>
+</div>
+<div class="timeline-item">
+<span class="timeline-year">PHASE 03</span>
+<div>
+<h3>Becoming Cruisers</h3>
+<p>Expand our range gradually through Florida, the Keys, the Dry Tortugas, the Bahamas, and eventually the Caribbean. Learn provisioning, repairs away from home, remote work, passage planning, and how our family functions across weeks and months aboard.</p>
+<div class="success-box"><span class="success-label">Success Looks Like</span><p>Extended cruising has become our normal rhythm, not a vacation from ordinary life.</p></div>
+</div>
+</div>
+<div class="timeline-item">
+<span class="timeline-year">PHASE 04</span>
+<div>
+<h3>Bluewater</h3>
+<p>Prepare for our first ocean crossing only after years of coastal and island experience, when the family, the vessel, and the conditions are all ready. The crossing is not the beginning of the mission. It is the natural result of everything built before it.</p>
+<div class="success-box"><span class="success-label">Success Looks Like</span><p>We undertake the passage with earned confidence, realistic judgment, and no need to prove anything to anyone.</p></div>
+</div>
+</div>
+</div>
+<div style="max-width:880px;margin-top:56px;padding:34px;border-left:4px solid var(--gold);background:rgba(6,25,39,.05);">
+<p style="margin:0;font-family:'Barlow Condensed',sans-serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:700;line-height:1.1;color:var(--navy);">
+        Every phase prepares us for the next. There are no shortcuts. Only experience earned one voyage at a time.
+      </p>
+</div>
+</section>
+<section class="section section-dark">
+<div class="section-heading">
+<p class="eyebrow">HOW THE JOURNEY ADVANCES</p>
+<h2>Readiness unlocks the next horizon.</h2>
+</div>
+<div class="content-grid three-column-grid">
+<article class="content-card">
+<span class="card-number">01</span>
+<h3>Financial Readiness</h3>
+<p>The boat purchase must support the mission, not bury it beneath new pressure.</p>
+</article>
+<article class="content-card">
+<span class="card-number">02</span>
+<h3>Crew Readiness</h3>
+<p>Every member of the family needs time to adapt, learn, contribute, and feel secure aboard.</p>
+</article>
+<article class="content-card">
+<span class="card-number">03</span>
+<h3>Vessel Readiness</h3>
+<p>Each expansion in range follows proven systems, completed maintenance, and successful shakedown miles.</p>
+</article>
+</div>
+</section>
+<section class="section support-section">
+<div class="support-content">
+<p class="eyebrow">FOLLOW ALONG</p>
+<h2>Watch the crew earn every mile.</h2>
+<p>
+        Milestones, setbacks, lessons, boat candidates, training days, and real family progress will be documented as they happen.
+      </p>
+<div class="hero-actions">
+<a class="button button-primary" href="videos.html">Watch the Episodes</a>
+<a class="button button-secondary" href="support.html">Join the Crew</a>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="footer-brand">
+<img alt="" src="assets/operation-wake-logo.png"/>
+<div>
+<strong>OPERATION WAKE</strong>
+<span>Leave More Than a Wake.</span>
+</div>
+</div>
+<p>© <span id="year"></span> Operation Wake. All rights reserved.</p>
+</footer>
+<script src="site-config.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

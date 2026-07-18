@@ -1,20 +1,204 @@
-# Operation Wake Website v3
-
-Production-ready GitHub package compiled July 2026.
-
-## Included
-- Refined homepage with crew, mission dashboard, readiness-based journey, and Captain's Log
-- Final Mission page
-- Final Journey page organized by capability rather than fixed dates
-- Final Support page organized around participation before direct funding
-- Our Story, Videos, and Resources foundations
-- Shared responsive styling, navigation, logo assets, and site configuration
-
-## Timeline philosophy
-The public site no longer relies on a fixed departure countdown. Progress is communicated through the current mission phase and readiness milestones. Event-specific countdowns can be added later when a firm, near-term date exists.
-
-## Editing shared information
-Update `site-config.js` to change the current phase, home port, destination, crew labels, or dashboard progress.
-
-## GitHub / Netlify deployment
-Upload the extracted contents of this folder to the repository root. Do not upload the ZIP itself. Keep the `assets` folder intact.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="The Operation Wake Expedition Library: a growing collection of practical research, guides, checklists, and lessons for future cruising families." name="description"/>
+<title>Expedition Library | Operation Wake</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="style.css" rel="stylesheet">
+</link></head>
+<body class="inner-page library-page">
+<header class="site-header">
+<a aria-label="Operation Wake home" class="brand" href="index.html">
+<img alt="Operation Wake logo" src="assets/operation-wake-logo.png"/>
+<span>OPERATION WAKE</span>
+</a>
+<button aria-expanded="false" aria-label="Open navigation" class="menu-toggle">☰</button>
+<nav aria-label="Primary navigation" class="nav-links">
+<a href="index.html">Home</a>
+<a href="our-story.html">Our Story</a>
+<a href="mission.html">Mission</a>
+<a href="journey.html">Journey</a>
+<a href="videos.html">Videos</a>
+<a aria-current="page" href="resources.html">Expedition Library</a>
+<a href="support.html">Support</a>
+</nav>
+</header>
+<main>
+<section class="library-hero">
+<div aria-hidden="true" class="library-hero-grid"></div>
+<div aria-hidden="true" class="library-hero-glow"></div>
+<div aria-hidden="true" class="library-compass"><span>N</span><i></i></div>
+<div class="library-hero-content">
+<p class="eyebrow">THE EXPEDITION LIBRARY</p>
+<h1>LEARN. PREPARE.<br/>EXPLORE.</h1>
+<p class="library-hero-copy">
+        A growing collection of the research, lessons, checklists, and hard-earned knowledge helping our family prepare for life under sail.
+      </p>
+<div class="hero-actions">
+<a class="button button-primary" href="#collections">Explore the Library</a>
+<a class="button button-secondary" href="journey.html">See the Journey</a>
+</div>
+</div>
+<div aria-hidden="true" class="library-coordinate">
+<span>29.1872° N</span>
+<i></i>
+<span>82.1401° W</span>
+</div>
+</section>
+<section class="section library-intro">
+<div class="library-intro-copy">
+<p class="eyebrow dark">KNOWLEDGE IS OUR FIRST VOYAGE</p>
+<h2>Every mile begins with something we can learn today.</h2>
+<p>
+        Operation Wake is still being built, and so is this library. We are collecting what we learn about boats, seamanship, family cruising, systems, destinations, and the long road from dream to departure. The goal is simple: make the path clearer for the families coming behind us.
+      </p>
+</div>
+<aside aria-label="Expedition Library status" class="library-status">
+<div class="library-status-topline">
+<span>EXPEDITION PROGRESS</span>
+<strong>FOUNDATION PHASE</strong>
+</div>
+<div aria-hidden="true" class="library-progress-track">
+<span></span>
+</div>
+<div class="library-status-grid">
+<div><strong>08</strong><span>Collections mapped</span></div>
+<div><strong>01</strong><span>Living library</span></div>
+<div><strong>∞</strong><span>Lessons ahead</span></div>
+</div>
+<p>First guides and checklists are now in development.</p>
+</aside>
+</section>
+<section class="section section-dark library-collections" id="collections">
+<div class="section-heading library-heading">
+<div>
+<p class="eyebrow">EXPLORE BY COLLECTION</p>
+<h2>THE KNOWLEDGE WE'RE BUILDING.</h2>
+</div>
+<p>Each collection will grow with our training, research, repairs, voyages, victories, and mistakes.</p>
+</div>
+<div class="library-grid">
+<article class="library-card library-card-featured">
+<div class="library-card-top">
+<span class="library-index">01</span>
+<span class="library-badge">BUILDING NOW</span>
+</div>
+<div aria-hidden="true" class="library-icon">⛵</div>
+<h3>Boat Selection</h3>
+<p>How to choose a safe, practical home afloat without losing sight of the crew who must live aboard it.</p>
+<ul>
+<li>Monohull vs. catamaran</li>
+<li>Family layout requirements</li>
+<li>Survey and inspection planning</li>
+<li>Budget and ownership costs</li>
+</ul>
+<span class="library-card-link">First guides in development <span aria-hidden="true">→</span></span>
+</article>
+<article class="library-card">
+<div class="library-card-top"><span class="library-index">02</span><span class="library-badge">MAPPED</span></div>
+<div aria-hidden="true" class="library-icon">🧭</div>
+<h3>Learn to Sail</h3>
+<p>The skills, courses, and seamanship habits that turn passengers into a capable family crew.</p>
+<ul><li>Training pathways</li><li>Navigation and weather</li><li>Docking and anchoring</li><li>Rules of the road</li></ul>
+<span class="library-card-link">Training log in progress <span aria-hidden="true">→</span></span>
+</article>
+<article class="library-card">
+<div class="library-card-top"><span class="library-index">03</span><span class="library-badge">MAPPED</span></div>
+<div aria-hidden="true" class="library-icon">🌎</div>
+<h3>Cruising Destinations</h3>
+<p>Route research and practical destination notes, beginning close to home and expanding with every wake.</p>
+<ul><li>Florida Gulf Coast</li><li>Keys and Dry Tortugas</li><li>Bahamas and Caribbean</li><li>Future bluewater routes</li></ul>
+<span class="library-card-link">Charting the first routes <span aria-hidden="true">→</span></span>
+</article>
+<article class="library-card">
+<div class="library-card-top"><span class="library-index">04</span><span class="library-badge">MAPPED</span></div>
+<div aria-hidden="true" class="library-icon">⚙️</div>
+<h3>Boat Systems</h3>
+<p>Plain-language explanations of the machinery and systems that keep a cruising boat safe and independent.</p>
+<ul><li>Diesel propulsion</li><li>Electrical and solar</li><li>Water and plumbing</li><li>Rigging and sail handling</li></ul>
+<span class="library-card-link">Notes being organized <span aria-hidden="true">→</span></span>
+</article>
+<article class="library-card">
+<div class="library-card-top"><span class="library-index">05</span><span class="library-badge">MAPPED</span></div>
+<div aria-hidden="true" class="library-icon">👨‍👩‍👧‍👦</div>
+<h3>Family Cruising</h3>
+<p>Building a safe, healthy, purposeful family life inside a home that happens to float.</p>
+<ul><li>Homeschooling aboard</li><li>Routines and watchkeeping</li><li>Provisioning and health</li><li>Faith, privacy, and connection</li></ul>
+<span class="library-card-link">Collection growing <span aria-hidden="true">→</span></span>
+</article>
+<article class="library-card">
+<div class="library-card-top"><span class="library-index">06</span><span class="library-badge">MAPPED</span></div>
+<div aria-hidden="true" class="library-icon">🔧</div>
+<h3>DIY &amp; Maintenance</h3>
+<p>Repairs, refits, tools, costs, and lessons from maintaining a cruising boat with our own hands.</p>
+<ul><li>Preventive maintenance</li><li>Mechanical repairs</li><li>Fiberglass and finishes</li><li>Project records and costs</li></ul>
+<span class="library-card-link">Logging the first repairs <span aria-hidden="true">→</span></span>
+</article>
+<article class="library-card">
+<div class="library-card-top"><span class="library-index">07</span><span class="library-badge">MAPPED</span></div>
+<div aria-hidden="true" class="library-icon">📷</div>
+<h3>Field-Tested Gear</h3>
+<p>Equipment selected for a reason, with honest notes about where it earns its place aboard.</p>
+<ul><li>Safety and navigation</li><li>Tools and spares</li><li>Cameras and drones</li><li>Galley and everyday life</li></ul>
+<span class="library-card-link">Gear list in progress <span aria-hidden="true">→</span></span>
+</article>
+<article class="library-card">
+<div class="library-card-top"><span class="library-index">08</span><span class="library-badge">MAPPED</span></div>
+<div aria-hidden="true" class="library-icon">📚</div>
+<h3>Captain's Library</h3>
+<p>The books, charts, courses, apps, channels, and references shaping how we think and prepare.</p>
+<ul><li>Books and reference guides</li><li>Courses and certifications</li><li>Charts and planning tools</li><li>Creators worth following</li></ul>
+<span class="library-card-link">Shelves filling in <span aria-hidden="true">→</span></span>
+</article>
+</div>
+</section>
+<section class="section library-field-note">
+<div class="field-note-number">FIELD NOTE 001</div>
+<div class="field-note-copy">
+<p class="eyebrow dark">FROM THE BEGINNING</p>
+<h2>We will show the work, not just the horizon.</h2>
+<p>
+        This library will not pretend we began as experts. It will preserve the questions, decisions, checklists, failures, and breakthroughs that carry Operation Wake from dry land to open water. When experience changes our minds, the library will say so.
+      </p>
+</div>
+</section>
+<section class="section library-academy">
+<div aria-hidden="true" class="academy-mark">OW</div>
+<div class="academy-copy">
+<p class="eyebrow">ON THE CHART TABLE</p>
+<h2>Operation Wake Academy</h2>
+<p>
+        Downloadable boat-comparison worksheets, maintenance logs, safety binders, provisioning planners, homeschool materials, and practical checklists are planned as the library expands.
+      </p>
+<span class="academy-status">PLANNED COLLECTION</span>
+</div>
+</section>
+<section class="section library-closing">
+<div>
+<p class="eyebrow">THIS LIBRARY IS ALIVE</p>
+<h2>Every lesson should leave a trail for those who follow.</h2>
+<p>
+        Operation Wake is more than a record of where our family goes. It is a record of how we get there, built openly for anyone preparing to cast off toward a more intentional life.
+      </p>
+<div class="hero-actions">
+<a class="button button-primary" href="support.html">Help Build the Mission</a>
+<a class="button button-secondary" href="videos.html">Follow the Story</a>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="footer-brand">
+<img alt="" src="assets/operation-wake-logo.png"/>
+<div><strong>OPERATION WAKE</strong><span>Leave More Than a Wake.</span></div>
+</div>
+<p>© <span id="year"></span> Operation Wake. All rights reserved.</p>
+</footer>
+<script src="site-config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
