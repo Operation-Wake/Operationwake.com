@@ -1,5 +1,4 @@
 const config = window.OPERATION_WAKE || {};
-const targetDate = new Date(config.departureDate || "2027-01-01T00:00:00-05:00").getTime();
 
 function setText(selector, value) {
   document.querySelectorAll(selector).forEach(el => {
@@ -7,25 +6,7 @@ function setText(selector, value) {
   });
 }
 
-function updateCountdown() {
-  const daysElement = document.getElementById("days");
-  if (!daysElement) return;
-
-  const distance = Math.max(targetDate - Date.now(), 0);
-  const days = Math.floor(distance / 86400000);
-  const hours = Math.floor((distance / 3600000) % 24);
-  const minutes = Math.floor((distance / 60000) % 60);
-  const seconds = Math.floor((distance / 1000) % 60);
-
-  daysElement.textContent = days.toLocaleString();
-  document.getElementById("hours").textContent = String(hours).padStart(2, "0");
-  document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
-  document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
-}
-
 function hydrateConfig() {
-  setText("[data-config='departure-display']", config.departureDisplay);
-  setText("[data-config='departure-short']", config.departureShort);
   setText("[data-config='current-phase']", config.currentPhase);
   setText("[data-config='home-port']", config.homePort);
   setText("[data-config='destination']", config.destination);
@@ -50,9 +31,6 @@ function hydrateConfig() {
 }
 
 hydrateConfig();
-updateCountdown();
-if (document.getElementById("days")) setInterval(updateCountdown, 1000);
-
 document.querySelectorAll("#year").forEach(year => {
   year.textContent = new Date().getFullYear();
 });

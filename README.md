@@ -106,20 +106,20 @@
     </div>
     <div class="timeline">
       <div class="timeline-item">
-        <span class="timeline-year">2026</span>
-        <div><h3>The mission becomes public</h3><p>Operation Wake launches, the website goes live, and the family begins documenting the process.</p></div>
+        <span class="timeline-year">PHASE 01</span>
+        <div><h3>Building the Foundation</h3><p>Eliminate debt, grow flexible income, simplify our lives, and build the margin needed to buy the right boat without forcing the decision.</p></div>
       </div>
       <div class="timeline-item">
-        <span class="timeline-year">2027–2029</span>
-        <div><h3>Skills, income, and preparation</h3><p>Grow flexible businesses, deepen sailing experience, evaluate boats, and simplify life ashore.</p></div>
+        <span class="timeline-year">PHASE 02</span>
+        <div><h3>Becoming Sailors</h3><p>Purchase our first cruising boat, learn her systems, and discover what living and homeschooling aboard actually require from our family.</p></div>
       </div>
       <div class="timeline-item">
-        <span class="timeline-year">2029–2031</span>
-        <div><h3>Boat acquisition and sea trials</h3><p>Purchase, outfit, practice, repair, learn, and prepare for the first extended chapter afloat.</p></div>
+        <span class="timeline-year">PHASE 03</span>
+        <div><h3>Becoming Cruisers</h3><p>Expand our range gradually — the Keys, the Bahamas, eventually the Caribbean — until extended cruising is our normal rhythm.</p></div>
       </div>
       <div class="timeline-item">
-        <span class="timeline-year">2032</span>
-        <div><h3>Cast off</h3><p>Begin the cruising phase and let the horizon become part of the family classroom.</p></div>
+        <span class="timeline-year">PHASE 04</span>
+        <div><h3>Bluewater</h3><p>Prepare for our first ocean crossing only once the family, the vessel, and the conditions are truly ready.</p></div>
       </div>
     </div>
   </section>
