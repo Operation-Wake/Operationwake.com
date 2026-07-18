@@ -1327,3 +1327,82 @@ footer {
   .support-grid { grid-template-columns: 1fr; }
   .support-card { min-height: auto; }
 }
+
+
+/* Crowdfunding launch update */
+.button-quiet {
+  color: rgba(255,255,255,.8);
+  border-color: transparent;
+  background: transparent;
+}
+.button-quiet:hover {
+  color: var(--gold);
+  transform: translateY(-2px);
+}
+
+.funding-card,
+.membership-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.funding-card::after,
+.membership-card::after {
+  content: "";
+  position: absolute;
+  right: -80px;
+  bottom: -110px;
+  width: 240px;
+  height: 240px;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 50%;
+  box-shadow: 0 0 0 35px rgba(255,255,255,.025), 0 0 0 70px rgba(255,255,255,.018);
+  pointer-events: none;
+}
+
+.membership-card::after {
+  border-color: rgba(6,25,39,.1);
+  box-shadow: 0 0 0 35px rgba(6,25,39,.025), 0 0 0 70px rgba(6,25,39,.018);
+}
+
+.funding-badge {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 5px;
+  margin: 26px 0;
+  padding: 18px 20px;
+  border-left: 3px solid var(--gold);
+  background: rgba(0,0,0,.18);
+}
+
+.funding-badge strong {
+  color: var(--gold);
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 1.2rem;
+  letter-spacing: .14em;
+}
+
+.funding-badge span {
+  color: rgba(255,255,255,.72);
+  font-size: .88rem;
+  line-height: 1.5;
+}
+
+.funding-badge-light {
+  border-left-color: var(--teal);
+  background: rgba(6,25,39,.055);
+}
+.funding-badge-light strong { color: #087f80; }
+.funding-badge-light span { color: var(--muted); }
+
+.support-card .button {
+  position: relative;
+  z-index: 2;
+  margin-top: 4px;
+}
+
+@media (max-width: 560px) {
+  .support-section .hero-actions { gap: 10px; }
+  .button-quiet { width: 100%; }
+}
