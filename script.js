@@ -1,4 +1,4 @@
-const targetDate = new Date("2032-01-01T00:00:00-05:00").getTime();
+const targetDate = new Date("2027-01-01T00:00:00-05:00").getTime();
 
 function updateCountdown() {
   const daysElement = document.getElementById("days");
