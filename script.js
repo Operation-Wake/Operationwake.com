@@ -1,80 +1,67 @@
-const targetDate = new Date("2027-01-01T00:00:00-05:00").getTime();
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Boat research, diesel knowledge, family education, budgeting, navigation, provisioning, and practical lessons from the journey." />
+  <title>Resources | Operation Wake</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="inner-page">
 
-function updateCountdown() {
-  const daysElement = document.getElementById("days");
-  if (!daysElement) return;
+<header class="site-header">
+  <a class="brand" href="index.html" aria-label="Operation Wake home">
+    <img src="assets/operation-wake-logo.png" alt="Operation Wake logo" />
+    <span>OPERATION WAKE</span>
+  </a>
+  <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+  <nav class="nav-links" aria-label="Primary navigation">
+    <a href="index.html">Home</a>
+    <a href="our-story.html">Our Story</a>
+    <a href="mission.html">Mission</a>
+    <a href="journey.html">Journey</a>
+    <a href="videos.html">Videos</a>
+    <a href="resources.html">Resources</a>
+    <a href="support.html">Support</a>
+  </nav>
+</header>
 
-  const now = Date.now();
-  const distance = Math.max(targetDate - now, 0);
-  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
-  const minutes = Math.floor((distance / (1000 * 60)) % 60);
-  const seconds = Math.floor((distance / 1000) % 60);
+<main>
+  <section class="page-hero simple-hero">
+    <div class="page-hero-overlay"></div>
+    <div class="page-hero-content">
+      <p class="eyebrow">RESOURCES</p>
+      <h1>LEARN WHAT WE LEARN.</h1>
+      <p>Boat research, diesel knowledge, family education, budgeting, navigation, provisioning, and practical lessons from the journey.</p>
+    </div>
+  </section>
+  <section class="section section-light coming-soon">
+    <div>
+      <p class="eyebrow dark">UNDER CONSTRUCTION</p>
+      <h2>This section is being built.</h2>
+      <p>
+        The framework is live now so the site can grow cleanly. This page will be developed as the next phase of Operation Wake takes shape.
+      </p>
+      <a class="button button-primary" href="index.html">Return Home</a>
+    </div>
+  </section>
+</main>
 
-  daysElement.textContent = days.toLocaleString();
-  document.getElementById("hours").textContent = String(hours).padStart(2, "0");
-  document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
-  document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
-}
+<footer>
+  <div class="footer-brand">
+    <img src="assets/operation-wake-logo.png" alt="" />
+    <div>
+      <strong>OPERATION WAKE</strong>
+      <span>Leave More Than a Wake.</span>
+    </div>
+  </div>
+  <p>© <span id="year"></span> Operation Wake. All rights reserved.</p>
+</footer>
 
-updateCountdown();
-if (document.getElementById("days")) {
-  setInterval(updateCountdown, 1000);
-}
-
-document.querySelectorAll("#year").forEach(year => {
-  year.textContent = new Date().getFullYear();
-});
-
-const menuToggle = document.querySelector(".menu-toggle");
-const navLinks = document.querySelector(".nav-links");
-
-if (menuToggle && navLinks) {
-  menuToggle.addEventListener("click", () => {
-    const isOpen = navLinks.classList.toggle("open");
-    menuToggle.setAttribute("aria-expanded", String(isOpen));
-    menuToggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
-    menuToggle.textContent = isOpen ? "×" : "☰";
-  });
-
-  navLinks.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", () => {
-      navLinks.classList.remove("open");
-      menuToggle.setAttribute("aria-expanded", "false");
-      menuToggle.setAttribute("aria-label", "Open navigation");
-      menuToggle.textContent = "☰";
-    });
-  });
-}
-
-const header = document.querySelector(".site-header");
-function updateHeader() {
-  if (header) header.classList.toggle("scrolled", window.scrollY > 24);
-}
-updateHeader();
-window.addEventListener("scroll", updateHeader, { passive: true });
-
-const currentPage = window.location.pathname.split("/").pop() || "index.html";
-document.querySelectorAll(".nav-links a").forEach(link => {
-  const href = link.getAttribute("href");
-  if (href === currentPage) {
-    link.classList.add("active");
-    link.setAttribute("aria-current", "page");
-  }
-});
-
-const revealItems = document.querySelectorAll(".reveal-on-scroll");
-if ("IntersectionObserver" in window) {
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.16 });
-
-  revealItems.forEach(item => observer.observe(item));
-} else {
-  revealItems.forEach(item => item.classList.add("visible"));
-}
+<script src="site-config.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
