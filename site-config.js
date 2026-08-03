@@ -3,11 +3,36 @@ window.OPERATION_WAKE = {
   homePort: "Ocala, Florida",
   destination: "Circumnavigation",
   crew: [
-    { initials: "M",  name: "Matthew",  role: "Founder · Veteran · Skipper-in-Training" },
-    { initials: "N",  name: "Natalie",  role: "Creative Lead · Realtor · Homeschool Leader" },
-    { initials: "Mi", name: "Miriam",   role: "Crew" },
-    { initials: "F",  name: "Fulton",   role: "Crew" },
-    { initials: "J",  name: "Joan",     role: "Crew" }
+    {
+      photo: "assets/crew/joe.jpg",
+      name: "Joe",
+      title: "Would Be Captain",
+      bio: "Army veteran, diesel tech, and licensed realtor. Building the platform, eliminating the debt, and training for the day he takes the helm."
+    },
+    {
+      photo: "assets/crew/natalie.jpg",
+      name: "Natalie",
+      title: "First Mate",
+      bio: "Creative lead, licensed realtor, and the homeschool engine keeping the crew sharp and on course."
+    },
+    {
+      photo: "assets/crew/miriam.jpg",
+      name: "Miriam",
+      title: "Junior Navigator",
+      bio: "Always knows which way is north. Reads the chart, trusts the compass, and asks the best questions."
+    },
+    {
+      photo: "assets/crew/fulton.jpg",
+      name: "Fulton",
+      title: "Nature & Weather Scout",
+      bio: "First to spot a cloud bank, last to come inside. The crew's eyes on the horizon."
+    },
+    {
+      photo: "assets/crew/joan.jpg",
+      name: "Joan",
+      title: "The Dragon · Chief Moral Officer",
+      bio: "Sets the standard. Enforces it loudly. Overalls always ready for whatever comes next."
+    }
   ],
   dashboard: {
     website:        100,
@@ -34,9 +59,14 @@ function hydrateConfig() {
   if (crewGrid && Array.isArray(config.crew)) {
     crewGrid.innerHTML = config.crew.map(member => `
       <article class="crew-card reveal-on-scroll">
-        <div class="crew-avatar" aria-hidden="true">${member.initials}</div>
-        <h3>${member.name}</h3>
-        <p>${member.role}</p>
+        <div class="crew-photo-wrap">
+          <img class="crew-photo" src="${member.photo}" alt="${member.name}" loading="lazy" />
+        </div>
+        <div class="crew-card-body">
+          <h3>${member.name}</h3>
+          <p class="crew-title">${member.title}</p>
+          <p class="crew-bio">${member.bio}</p>
+        </div>
       </article>
     `).join("");
   }
