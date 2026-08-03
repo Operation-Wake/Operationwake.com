@@ -1,3 +1,22 @@
+window.OPERATION_WAKE = {
+  currentPhase: "Building the Foundation",
+  homePort: "Ocala, Florida",
+  destination: "Circumnavigation",
+  crew: [
+    { initials: "M",  name: "Matthew",  role: "Founder · Veteran · Skipper-in-Training" },
+    { initials: "N",  name: "Natalie",  role: "Creative Lead · Realtor · Homeschool Leader" },
+    { initials: "Mi", name: "Miriam",   role: "Crew" },
+    { initials: "F",  name: "Fulton",   role: "Crew" },
+    { initials: "J",  name: "Joan",     role: "Crew" }
+  ],
+  dashboard: {
+    website:        100,
+    launchPlatform:  70,
+    incomeSystems:   35,
+    boatPreparation: 20
+  }
+};
+
 const config = window.OPERATION_WAKE || {};
 
 function setText(selector, value) {
