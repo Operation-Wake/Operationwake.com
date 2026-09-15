@@ -28,10 +28,10 @@ export function authorized(request) {
   return Boolean(expected && expected.length >= 32 && Buffer.byteLength(supplied) === Buffer.byteLength(expected) &&
     timingSafeEqual(Buffer.from(supplied), Buffer.from(expected)));
 }
-export async function dispatch() {
+export async function dispatch(context) {
   const token = internalToken();
   if (token.length < 32) throw new Error('Internal token required');
-  const origin = process.env.CONTEXT === 'production' ? process.env.URL : process.env.DEPLOY_PRIME_URL;
+  const origin = deploymentOrigin(context);
   const url = new URL('/.netlify/functions/campaign-reconcile-background', origin);
   if (url.protocol !== 'https:') throw new Error('HTTPS required');
   const response = await fetch(url, { method: 'POST', headers: { authorization: `Bearer ${token}` }, signal: AbortSignal.timeout(10000) });
@@ -50,4 +50,10 @@ export async function saveSnapshot(store, snapshot) {
 
 export function fingerprint(config) {
   return createHash("sha256").update(JSON.stringify({account:config.account,mode:config.mode,links:[...config.links].sort(),reserveBps:config.reserveBps})).digest("hex");
+}
+
+export function deploymentOrigin(context) {
+  const id = context?.deploy?.id, name = context?.site?.name;
+  if (!/^[a-f0-9]{24}$/.test(id || '') || !/^[a-z0-9-]+$/.test(name || '')) throw new Error('Deploy identity required');
+  return `https://${id}--${name}.netlify.app`;
 }
