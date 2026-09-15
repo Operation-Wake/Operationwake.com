@@ -79,3 +79,10 @@ test('internal token can be derived without storing a second credential', async(
  assert.notEqual(value,internalToken({STRIPE_SECRET_KEY:'sk_test_other_fixture'}));
  assert.ok(!value.includes('sk_test'));
 });
+
+test('dispatch targets the immutable deployment using runtime context', async()=>{
+ const {deploymentOrigin}=await import('../netlify/lib/runtime.mjs');
+ assert.equal(deploymentOrigin({deploy:{id:'6aa9dabd6a7e3200087b2ef6'},site:{name:'operationwake'}}),'https://6aa9dabd6a7e3200087b2ef6--operationwake.netlify.app');
+ assert.throws(()=>deploymentOrigin({}));
+ assert.throws(()=>deploymentOrigin({deploy:{id:'6aa9dabd6a7e3200087b2ef6'},site:{name:'evil.com/path'}}));
+});
