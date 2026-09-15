@@ -39,6 +39,15 @@ window.OPERATION_WAKE = {
     launchPlatform:  70,
     incomeSystems:   35,
     boatPreparation: 20
+  },
+  campaign: {
+    progressEndpoint: "/api/campaign-progress",
+    ultimateTarget: 1800000,
+    paymentsLive: false,
+    paymentStatus: "Campaign tracking setup in progress",
+    oneTimePaymentLink: "",
+    recurringPaymentLink: "",
+    ballotOpen: false
   }
 };
 
