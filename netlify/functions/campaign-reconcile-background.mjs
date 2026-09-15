@@ -1,9 +1,9 @@
 import { authorized, settings, stripeClient, storeFor, saveSnapshot, fingerprint } from '../lib/runtime.mjs';
 import { reconcile } from '../lib/reconcile.mjs';
-export default async request => {
+export default async (request, context) => {
   if (request.method !== 'POST' || !authorized(request)) return new Response(null, { status: 403 });
   const config = settings();
-  if (config.mode === 'live' && process.env.CONTEXT !== 'production') return new Response(null, { status: 403 });
+  if (config.mode === 'live' && context?.deploy?.context !== 'production') return new Response(null, { status: 403 });
   const store = storeFor(config.mode);
   const startedAt = Date.now();
   try {

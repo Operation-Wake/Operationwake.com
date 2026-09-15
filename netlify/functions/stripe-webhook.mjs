@@ -3,11 +3,11 @@ const events = new Set(['checkout.session.completed', 'checkout.session.async_pa
   'checkout.session.async_payment_failed', 'invoice.paid', 'charge.updated', 'charge.refunded',
   'refund.updated', 'charge.dispute.created', 'charge.dispute.closed', 'charge.dispute.funds_withdrawn',
   'charge.dispute.funds_reinstated', 'balance.available']);
-export default async request => {
+export default async (request, context) => {
   if (request.method !== 'POST') return new Response(null, { status: 405 });
   let config, stripe;
   try { config = settings(); stripe = stripeClient(); } catch { return new Response('Not configured', { status: 503 }); }
-  if (config.mode === 'live' && process.env.CONTEXT !== 'production') return new Response(null, { status: 403 });
+  if (config.mode === 'live' && context?.deploy?.context !== 'production') return new Response(null, { status: 403 });
   const body = await request.text();
   if (Buffer.byteLength(body) > 1024 * 1024) return new Response(null, { status: 413 });
   let event;
