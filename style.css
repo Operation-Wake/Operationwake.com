@@ -1741,6 +1741,169 @@ footer {
   transform: translateY(-2px);
 }
 
+/* The Long Way Home campaign */
+.campaign-launch-callout {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 18px;
+  width: min(100%, 760px);
+  margin-bottom: 26px;
+  padding: 13px 16px;
+  border: 1px solid rgba(239,159,34,.65);
+  background: rgba(3,17,28,.78);
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 14px 40px rgba(0,0,0,.22);
+  transition: transform .2s ease, background .2s ease;
+}
+.campaign-launch-callout:hover { transform: translateY(-2px); background: rgba(12,42,59,.95); }
+.campaign-launch-label { padding: 7px 9px; background: var(--gold); color: #071a28; font-size: .63rem; font-weight: 800; letter-spacing: .11em; }
+.campaign-launch-callout strong { font: 800 1.25rem/1 "Barlow Condensed", sans-serif; letter-spacing: .06em; }
+.campaign-launch-action { color: var(--gold); font-size: .76rem; font-weight: 700; }
+
+.campaign-hero {
+  min-height: 82vh;
+  background:
+    radial-gradient(circle at 78% 34%, rgba(239,159,34,.18), transparent 23%),
+    linear-gradient(120deg, #03111c 0%, #09283c 62%, #0f4258 100%);
+}
+
+.campaign-status {
+  background: #071a28;
+  color: #fff;
+}
+
+.campaign-status-top,
+.contribution-layout,
+.voting-section {
+  display: grid;
+  grid-template-columns: 1.25fr .75fr;
+  gap: clamp(36px, 7vw, 100px);
+  align-items: center;
+}
+
+.campaign-status h2,
+.contribution-copy h2,
+.voting-copy h2,
+.campaign-guardrails h2 {
+  margin: 0;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: clamp(2.4rem, 5vw, 4.8rem);
+  line-height: .95;
+  text-transform: uppercase;
+}
+
+.campaign-total {
+  padding: 24px;
+  border-left: 2px solid var(--gold);
+}
+
+.campaign-total strong {
+  display: block;
+  color: var(--gold);
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
+  line-height: .9;
+}
+
+.campaign-total span,
+.campaign-data-note { color: rgba(255,255,255,.66); }
+.campaign-progress { height: 18px; margin-top: 52px; overflow: hidden; background: rgba(255,255,255,.13); }
+.campaign-progress span { display: block; width: 0; height: 100%; background: linear-gradient(90deg, #ef9f22, #ffd27a); transition: width .8s ease; }
+.campaign-markers { position: relative; height: 44px; margin-right: 18px; }
+.campaign-markers span { position: absolute; top: 10px; transform: translateX(-50%); color: rgba(255,255,255,.75); font: 700 .72rem/1 Inter, sans-serif; }
+.campaign-markers span::before { content: ""; position: absolute; left: 50%; bottom: 18px; height: 28px; border-left: 1px solid rgba(255,255,255,.35); }
+.campaign-markers span:last-child { transform: translateX(-100%); }
+.campaign-data-note { max-width: 780px; margin: 12px 0 0; font-size: .82rem; line-height: 1.6; }
+
+.campaign-principles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 52px; }
+.campaign-principles article { padding: 32px; background: #fff; border: 1px solid rgba(7,26,40,.12); }
+.campaign-principles article > span,
+.tier-number { color: var(--gold); font: 800 1rem/1 "Barlow Condensed", sans-serif; letter-spacing: .12em; }
+.campaign-principles h3 { margin: 20px 0 10px; font: 700 1.75rem/1 "Barlow Condensed", sans-serif; text-transform: uppercase; }
+.campaign-principles p { margin: 0; color: var(--muted); line-height: 1.7; }
+
+.challenge-ladder { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-top: 46px; }
+.challenge-ladder article { min-height: 330px; padding: 28px 24px; background: rgba(255,255,255,.055); border-top: 3px solid rgba(255,255,255,.2); }
+.challenge-ladder .tier-featured { background: rgba(239,159,34,.12); border-color: var(--gold); }
+.tier-amount { margin: 38px 0 8px; color: var(--gold); font-size: .74rem; font-weight: 800; letter-spacing: .12em; }
+.challenge-ladder h3 { margin: 0 0 16px; font: 700 1.85rem/1 "Barlow Condensed", sans-serif; text-transform: uppercase; }
+.challenge-ladder article > p:last-child { color: rgba(255,255,255,.66); font-size: .9rem; line-height: 1.65; }
+
+.contribution-copy > p:not(.eyebrow),
+.voting-copy > p:not(.eyebrow),
+.campaign-guardrails > p { color: var(--muted); line-height: 1.75; }
+.campaign-checklist { display: grid; gap: 12px; padding: 0; list-style: none; }
+.campaign-checklist li::before { content: "✓"; margin-right: 10px; color: var(--gold); font-weight: 800; }
+.contribution-device,
+.ballot-device { padding: clamp(28px, 5vw, 48px); background: #071a28; color: #fff; box-shadow: 0 24px 65px rgba(2,12,20,.2); }
+.contribution-device fieldset { display: grid; gap: 22px; margin: 0; padding: 0; border: 0; }
+.contribution-device legend { margin-bottom: 22px; font: 700 1.8rem/1 "Barlow Condensed", sans-serif; text-transform: uppercase; }
+.amount-options { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.amount-options input { position: absolute; opacity: 0; }
+.amount-options span { display: block; padding: 15px 6px; border: 1px solid rgba(255,255,255,.24); text-align: center; font-weight: 800; }
+.amount-options input:checked + span { background: var(--gold); border-color: var(--gold); color: #071a28; }
+.custom-amount { display: grid; gap: 8px; font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
+.custom-amount > span { display: flex; align-items: center; background: #fff; color: #071a28; }
+.custom-amount b { padding-left: 14px; }
+.custom-amount input { width: 100%; padding: 14px 12px; border: 0; font: inherit; }
+.recurring-option { display: flex; gap: 10px; font-size: .84rem; line-height: 1.5; }
+.contribution-device fieldset:disabled { opacity: .72; }
+.contribution-device.is-pending { border-color: rgba(240, 184, 72, .55); }
+.contribution-device.is-pending .device-status::before {
+  content: "";
+  display: inline-block;
+  width: .65rem;
+  height: .65rem;
+  margin-right: .55rem;
+  border-radius: 50%;
+  background: #f0b848;
+  box-shadow: 0 0 0 5px rgba(240, 184, 72, .12);
+}
+.payment-privacy { margin: 10px 0 0; font-size: .78rem; opacity: .72; }
+.device-status { margin: 18px 0 0; color: var(--gold); font-size: .78rem; line-height: 1.5; }
+
+.voting-section { background: #0b2435; color: #fff; }
+.ballot-status { color: var(--gold); font-size: .72rem; font-weight: 800; letter-spacing: .13em; }
+.ballot-status span { display: inline-block; width: 8px; height: 8px; margin-right: 8px; border-radius: 50%; background: var(--gold); }
+.ballot-device h3 { margin: 20px 0 28px; font: 700 2rem/1.05 "Barlow Condensed", sans-serif; text-transform: uppercase; }
+.ballot-options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.ballot-options button { padding: 14px 10px; border: 1px solid rgba(255,255,255,.25); background: transparent; color: #fff; font-weight: 700; }
+.ballot-device ul { display: grid; gap: 8px; margin: 28px 0 0; padding-left: 18px; color: rgba(255,255,255,.67); font-size: .82rem; line-height: 1.5; }
+
+.campaign-guardrails { background: #efe8da; text-align: center; }
+.campaign-guardrails .section-heading { max-width: 900px; margin-inline: auto; }
+.wake-checks { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; max-width: 1050px; margin: 44px auto 28px; }
+.wake-checks span { padding: 18px 8px; background: #071a28; color: #fff; font: 700 .85rem/1 "Barlow Condensed", sans-serif; letter-spacing: .08em; text-transform: uppercase; }
+.campaign-guardrails > p { max-width: 820px; margin: 0 auto; }
+
+@media (max-width: 1050px) {
+  .challenge-ladder { grid-template-columns: repeat(2, 1fr); }
+  .challenge-ladder article:last-child { grid-column: 1 / -1; min-height: auto; }
+  .wake-checks { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 760px) {
+  .campaign-launch-callout { grid-template-columns: 1fr; gap: 8px; width: 100%; }
+  .campaign-launch-label { width: max-content; }
+  .campaign-status-top,
+  .contribution-layout,
+  .voting-section { grid-template-columns: 1fr; }
+  .campaign-total { padding-left: 18px; }
+  .campaign-principles,
+  .challenge-ladder { grid-template-columns: 1fr; }
+  .challenge-ladder article,
+  .challenge-ladder article:last-child { grid-column: auto; min-height: auto; }
+  .campaign-markers span { font-size: .58rem; }
+}
+
+@media (max-width: 480px) {
+  .amount-options { grid-template-columns: repeat(2, 1fr); }
+  .wake-checks { grid-template-columns: repeat(2, 1fr); }
+  .campaign-markers span:nth-child(2) { display: none; }
+}
+
 .funding-card,
 .membership-card {
   position: relative;
@@ -1807,3 +1970,5 @@ footer {
   .support-section .hero-actions { gap: 10px; }
   .button-quiet { width: 100%; }
 }
+
+.amount-options[hidden] { display: none; }

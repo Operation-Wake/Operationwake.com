@@ -1,0 +1,17 @@
+{
+  "name": "operation-wake",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "build": "node scripts/build.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "@netlify/blobs": "10.7.13",
+    "stripe": "18.5.0"
+  },
+  "packageManager": "pnpm@11.19.0"
+}
