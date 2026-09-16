@@ -114,18 +114,19 @@
       <form class="contribution-device" data-contribution-form>
         <fieldset disabled>
           <legend>Choose a contribution</legend>
-          <div class="amount-options">
+          <p>For a one-time contribution, choose any amount from $1 on Stripe. For monthly support, select an amount below.</p>
+          <div class="amount-options" data-monthly-amounts hidden>
             <label><input type="radio" name="amount" value="1" checked /><span>$1</span></label>
             <label><input type="radio" name="amount" value="5" /><span>$5</span></label>
             <label><input type="radio" name="amount" value="10" /><span>$10</span></label>
             <label><input type="radio" name="amount" value="20" /><span>$20</span></label>
           </div>
-          <label class="custom-amount">Custom amount <span><b>$</b><input data-custom-amount type="number" min="1" step="1" inputmode="decimal" placeholder="Other" /></span></label>
           <label class="recurring-option"><input data-recurring type="checkbox" /> Make this a monthly contribution until canceled</label>
           <button class="button button-primary" type="submit">Continue Securely</button>
         </fieldset>
-        <p class="device-status" role="status">Stripe approval pending. The campaign page is ready, but contributions are not being accepted yet.</p>
-        <p class="payment-privacy">When checkout opens, payment details will be entered only on Stripe's secure page.</p>
+        <p class="device-status" role="status">Contribution setup in progress. The campaign page is ready, but contributions are not being accepted yet.</p>
+        <p class="payment-privacy"><strong>Contributions are non-refundable.</strong> Canceling monthly support stops future payments and does not refund past contributions.</p>
+        <p class="payment-privacy">Payment details are entered only on Stripe’s secure page. Monthly support renews until canceled. <a data-customer-portal hidden>Manage or cancel monthly support</a>.</p>
       </form>
     </div>
   </section>

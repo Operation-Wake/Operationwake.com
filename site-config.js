@@ -45,8 +45,14 @@ window.OPERATION_WAKE = {
     ultimateTarget: 1800000,
     paymentsLive: false,
     paymentStatus: "Campaign tracking setup in progress",
-    oneTimePaymentLink: "",
-    recurringPaymentLink: "",
+    oneTimePaymentLink: "https://buy.stripe.com/8x27sN56fdphckB4io9EI00",
+    monthlyPaymentLinks: {
+      1: "https://buy.stripe.com/9B6aEZ8ir0CvgAR16c9EI01",
+      5: "https://buy.stripe.com/6oU14p0PZcld98p4io9EI02",
+      10: "https://buy.stripe.com/dRm6oJ42b70T5Wd0289EI03",
+      20: "https://buy.stripe.com/3cIfZjaqzad584leX29EI04"
+    },
+    customerPortal: "https://billing.stripe.com/p/login/8x27sN56fdphckB4io9EI00",
     ballotOpen: false
   }
 };

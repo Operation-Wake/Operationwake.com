@@ -1970,3 +1970,5 @@ footer {
   .support-section .hero-actions { gap: 10px; }
   .button-quiet { width: 100%; }
 }
+
+.amount-options[hidden] { display: none; }
