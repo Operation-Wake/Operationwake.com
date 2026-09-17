@@ -41,11 +41,12 @@
           !Number.isSafeInteger(data.targetCents) || data.targetCents <= 0 ||
           !Number.isFinite(Date.parse(data.updatedAt)) || Date.now() - Date.parse(data.updatedAt) > 35 * 60 * 1000) throw new Error('Invalid total');
       total.textContent = money(data.verifiedNetCents);
-      const bounded = Math.max(0, Math.min(data.targetCents, data.verifiedNetCents));
-      fill.style.width = `${bounded / data.targetCents * 100}%`;
-      bar.setAttribute('aria-valuemax', String(data.targetCents / 100));
+      const targetCents = 115000000; // Published cumulative milestone for Missions 1–3; Mission 4 remains TBD.
+      const bounded = Math.max(0, Math.min(targetCents, data.verifiedNetCents));
+      fill.style.width = `${bounded / targetCents * 100}%`;
+      bar.setAttribute('aria-valuemax', String(targetCents / 100));
       bar.setAttribute('aria-valuenow', String(bounded / 100));
-      bar.setAttribute('aria-valuetext', `${money(data.verifiedNetCents)} verified net toward ${money(data.targetCents)}`);
+      bar.setAttribute('aria-valuetext', `${money(data.verifiedNetCents)} verified net toward ${money(targetCents)} for Missions 1–3; Mission 4 target to be determined`);
       status.textContent = `Updated ${new Date(data.updatedAt).toLocaleString('en-US')}. Automatic checks are scheduled every 15 minutes.`;
       if (details) details.textContent = `Pending settlement: ${money(data.pendingNetCents)} (not counted). Provisional reserve: ${data.reserveBps / 100}% (${money(data.reserveCents)}).`;
     } catch {

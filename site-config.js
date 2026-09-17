@@ -42,7 +42,7 @@ window.OPERATION_WAKE = {
   },
   campaign: {
     progressEndpoint: "/api/campaign-progress",
-    ultimateTarget: 1800000,
+    knownMissionsTarget: 1150000,
     paymentsLive: false,
     paymentStatus: "Campaign tracking setup in progress",
     oneTimePaymentLink: "https://buy.stripe.com/8x27sN56fdphckB4io9EI00",
@@ -53,7 +53,6 @@ window.OPERATION_WAKE = {
       20: "https://buy.stripe.com/3cIfZjaqzad584leX29EI04"
     },
     customerPortal: "https://billing.stripe.com/p/login/8x27sN56fdphckB4io9EI00",
-    ballotOpen: false
   }
 };
 
