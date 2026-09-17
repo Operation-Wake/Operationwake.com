@@ -1824,7 +1824,7 @@ footer {
 .campaign-principles h3 { margin: 20px 0 10px; font: 700 1.75rem/1 "Barlow Condensed", sans-serif; text-transform: uppercase; }
 .campaign-principles p { margin: 0; color: var(--muted); line-height: 1.7; }
 
-.challenge-ladder { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; margin-top: 46px; }
+.challenge-ladder { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 46px; }
 .challenge-ladder article { min-height: 330px; padding: 28px 24px; background: rgba(255,255,255,.055); border-top: 3px solid rgba(255,255,255,.2); }
 .challenge-ladder .tier-featured { background: rgba(239,159,34,.12); border-color: var(--gold); }
 .tier-amount { margin: 38px 0 8px; color: var(--gold); font-size: .74rem; font-weight: 800; letter-spacing: .12em; }
@@ -1880,7 +1880,7 @@ footer {
 
 @media (max-width: 1050px) {
   .challenge-ladder { grid-template-columns: repeat(2, 1fr); }
-  .challenge-ladder article:last-child { grid-column: 1 / -1; min-height: auto; }
+  .challenge-ladder article:last-child { min-height: auto; }
   .wake-checks { grid-template-columns: repeat(3, 1fr); }
 }
 
@@ -1901,7 +1901,7 @@ footer {
 @media (max-width: 480px) {
   .amount-options { grid-template-columns: repeat(2, 1fr); }
   .wake-checks { grid-template-columns: repeat(2, 1fr); }
-  .campaign-markers span:nth-child(2) { display: none; }
+  .campaign-markers span:nth-child(2) { display: inline; }
 }
 
 .funding-card,
