@@ -43,5 +43,5 @@ export function publicProgress(snapshot, now = Date.now()) {
   // Deliberate allowlist: no account, transaction, customer IDs or contact data.
   const { verifiedNetCents, pendingNetCents, reserveCents, reserveBps, currency } = snapshot.totals;
   return { status: 'ready', verifiedNetCents, pendingNetCents, reserveCents, reserveBps, currency,
-    targetCents: 180000000, updatedAt: snapshot.updatedAt };
+    targetCents: 115000000, updatedAt: snapshot.updatedAt };
 }
