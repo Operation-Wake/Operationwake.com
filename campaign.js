@@ -14,7 +14,7 @@
   };
   fieldset.disabled = !live;
   form.classList.toggle('is-pending', !live);
-  status.textContent = live ? 'Choose your contribution and continue to Stripe’s secure checkout.' : 'Contribution setup in progress. Payments are not open yet.';
+  status.textContent = live ? 'Choose your contribution and continue to Stripe’s secure checkout.' : 'Checkout is unavailable in this preview. Visit operationwake.com to contribute.';
   recurring.addEventListener('change', () => { amounts.hidden = !recurring.checked; });
   const portalUrl = stripeUrl(campaign.customerPortal, 'billing.stripe.com');
   if (portalUrl) { portal.href = portalUrl; portal.hidden = false; }

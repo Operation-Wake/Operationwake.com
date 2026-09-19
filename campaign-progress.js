@@ -27,7 +27,7 @@
       const data = await response.json();
       if (data.status !== 'ready') {
         const messages = {
-          not_connected: 'Live tracking is being connected. No verified total is available yet.',
+          not_connected: 'A confirmed campaign total is temporarily unavailable.',
           review_required: 'The contribution total is being reconciled. It will return after verification.',
           stale: 'The latest contribution total is awaiting a fresh update.'
         };
@@ -46,7 +46,7 @@
       fill.style.width = `${bounded / targetCents * 100}%`;
       bar.setAttribute('aria-valuemax', String(targetCents / 100));
       bar.setAttribute('aria-valuenow', String(bounded / 100));
-      bar.setAttribute('aria-valuetext', `${money(data.verifiedNetCents)} verified net toward ${money(targetCents)} for Missions 1–3; Mission 4 target to be determined`);
+      bar.setAttribute('aria-valuetext', `${money(data.verifiedNetCents)} estimated net toward ${money(targetCents)} for Missions 1–3; Mission 4 target to be determined`);
       status.textContent = `Updated ${new Date(data.updatedAt).toLocaleString('en-US')}. Automatic checks are scheduled every 15 minutes.`;
       if (details) details.textContent = `Pending settlement: ${money(data.pendingNetCents)} (not counted). Provisional reserve: ${data.reserveBps / 100}% (${money(data.reserveCents)}).`;
     } catch {
@@ -56,7 +56,7 @@
       running = false;
     }
   }
-  unavailable('Loading verified contributions…');
+  unavailable('Checking latest contributions…');
   refresh();
   setInterval(() => { if (!document.hidden) refresh(); }, 60000);
   document.addEventListener('visibilitychange', () => { if (!document.hidden) refresh(); });
