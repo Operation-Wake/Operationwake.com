@@ -1,5 +1,5 @@
 window.OPERATION_WAKE = {
-  currentPhase: "Building the Foundation",
+  currentPhase: "Preparing Big Trouble",
   homePort: "Ocala, Florida",
   destination: "Circumnavigation",
   crew: [
@@ -38,11 +38,11 @@ window.OPERATION_WAKE = {
     website:        100,
     launchPlatform:  70,
     incomeSystems:   35,
-    boatPreparation: 20
+    boatPreparation: 25
   },
   campaign: {
     progressEndpoint: "/api/campaign-progress",
-    knownMissionsTarget: 1150000,
+    knownMissionsTarget: 880000,
     paymentsLive: false,
     paymentStatus: "Live contributions",
     oneTimePaymentLink: "https://buy.stripe.com/8x27sN56fdphckB4io9EI00",

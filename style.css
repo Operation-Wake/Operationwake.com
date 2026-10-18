@@ -1816,6 +1816,9 @@ footer {
 .campaign-markers span::before { content: ""; position: absolute; left: 50%; bottom: 18px; height: 28px; border-left: 1px solid rgba(255,255,255,.35); }
 .campaign-markers span:last-child { transform: translateX(-100%); }
 .campaign-data-note { max-width: 780px; margin: 12px 0 0; font-size: .82rem; line-height: 1.6; }
+.milestone-key { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-top: 14px; }
+.milestone-key span { padding: 11px 8px; border-top: 1px solid rgba(255,255,255,.24); color: rgba(255,255,255,.68); font-size: .68rem; line-height: 1.35; text-align: center; }
+.milestone-key b { display: block; color: var(--gold); font: 800 .9rem/1.1 "Barlow Condensed", sans-serif; letter-spacing: .05em; }
 
 .campaign-principles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 52px; }
 .campaign-principles article { padding: 32px; background: #fff; border: 1px solid rgba(7,26,40,.12); }
@@ -1824,8 +1827,21 @@ footer {
 .campaign-principles h3 { margin: 20px 0 10px; font: 700 1.75rem/1 "Barlow Condensed", sans-serif; text-transform: uppercase; }
 .campaign-principles p { margin: 0; color: var(--muted); line-height: 1.7; }
 
+.boat-ladder-section { background: #0b2435; color: #fff; }
+.boat-ladder-section .split-heading > p { color: rgba(255,255,255,.72); line-height: 1.75; }
+.boat-ladder-flow { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 48px; }
+.boat-ladder-flow article { position: relative; padding: 28px 24px; border-top: 3px solid var(--gold); background: rgba(255,255,255,.06); }
+.boat-ladder-flow article:not(:last-child)::after { content: "→"; position: absolute; z-index: 2; top: 50%; right: -13px; color: var(--gold); font-size: 1.4rem; font-weight: 800; transform: translateY(-50%); }
+.boat-ladder-flow span { color: var(--gold); font: 800 .78rem/1 Inter, sans-serif; letter-spacing: .14em; }
+.boat-ladder-flow h3 { margin: 22px 0 12px; font: 700 1.7rem/1 "Barlow Condensed", sans-serif; text-transform: uppercase; }
+.boat-ladder-flow p { margin: 0; color: rgba(255,255,255,.68); font-size: .88rem; line-height: 1.65; }
+.boat-ladder-note { max-width: 920px; margin-top: 28px; padding: 24px 28px; border-left: 3px solid var(--gold); background: rgba(0,0,0,.22); }
+.boat-ladder-note strong { color: var(--gold); font: 700 1.35rem/1 "Barlow Condensed", sans-serif; text-transform: uppercase; }
+.boat-ladder-note p { margin: 10px 0 0; color: rgba(255,255,255,.7); line-height: 1.7; }
+
 .challenge-ladder { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 46px; }
 .challenge-ladder article { min-height: 330px; padding: 28px 24px; background: rgba(255,255,255,.055); border-top: 3px solid rgba(255,255,255,.2); }
+.challenge-ladder article:last-child:nth-child(odd) { grid-column: 1 / -1; }
 .challenge-ladder .tier-featured { background: rgba(239,159,34,.12); border-color: var(--gold); }
 .tier-amount { margin: 38px 0 8px; color: var(--gold); font-size: .74rem; font-weight: 800; letter-spacing: .12em; }
 .challenge-ladder h3 { margin: 0 0 16px; font: 700 1.85rem/1 "Barlow Condensed", sans-serif; text-transform: uppercase; }
@@ -1882,6 +1898,8 @@ footer {
   .challenge-ladder { grid-template-columns: repeat(2, 1fr); }
   .challenge-ladder article:last-child { min-height: auto; }
   .wake-checks { grid-template-columns: repeat(3, 1fr); }
+  .boat-ladder-flow { grid-template-columns: repeat(2, 1fr); }
+  .boat-ladder-flow article::after { display: none; }
 }
 
 @media (max-width: 760px) {
@@ -1892,7 +1910,9 @@ footer {
   .voting-section { grid-template-columns: 1fr; }
   .campaign-total { padding-left: 18px; }
   .campaign-principles,
-  .challenge-ladder { grid-template-columns: 1fr; }
+  .challenge-ladder,
+  .boat-ladder-flow { grid-template-columns: 1fr; }
+  .milestone-key { grid-template-columns: repeat(2, 1fr); }
   .challenge-ladder article,
   .challenge-ladder article:last-child { grid-column: auto; min-height: auto; }
   .campaign-markers span { font-size: .58rem; }
