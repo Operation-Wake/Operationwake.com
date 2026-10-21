@@ -41,7 +41,7 @@
           !Number.isSafeInteger(data.targetCents) || data.targetCents <= 0 ||
           !Number.isFinite(Date.parse(data.updatedAt)) || Date.now() - Date.parse(data.updatedAt) > 35 * 60 * 1000) throw new Error('Invalid total');
       total.textContent = money(data.verifiedNetCents);
-      const targetCents = 88000000; // Full published TLWH Challenge target through Mission 4, Phase 2.
+      const targetCents = 58000000; // Full published TLWH Challenge target through Mission 4, Phase 2.
       const bounded = Math.max(0, Math.min(targetCents, data.verifiedNetCents));
       fill.style.width = `${bounded / targetCents * 100}%`;
       bar.setAttribute('aria-valuemax', String(targetCents / 100));
