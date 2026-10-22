@@ -7,7 +7,7 @@ window.OPERATION_WAKE = {
       photo: "assets/crew/joe.jpg",
       name: "Joe",
       title: "Would Be Captain",
-      bio: "Army veteran, diesel tech, and licensed realtor. Building the platform, eliminating the debt, and training for the day he takes the helm."
+      bio: "Disabled Army veteran and diesel technician building experience, pursuing a USCG OUPV captain’s license, and preparing for future maritime work."
     },
     {
       photo: "assets/crew/natalie.jpg",
