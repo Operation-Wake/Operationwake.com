@@ -56,10 +56,11 @@ async function render(payload,ok=true){
  await new Promise(resolve=>setImmediate(resolve));
  return nodes;
 }
-test('browser displays a verified cents total and accessible progress',async()=>{
+test('browser displays verified funds without a funding target',async()=>{
  const nodes=await render({status:'ready',currency:'usd',verifiedNetCents:7260,pendingNetCents:100,reserveCents:2420,reserveBps:2500,targetCents:180000000,updatedAt:new Date().toISOString()});
  assert.equal(nodes.get('[data-campaign-total]').textContent,'$72.60');
- assert.equal(nodes.get('.campaign-progress').attributes['aria-valuenow'],'72.6');
+ assert.equal(nodes.get('.campaign-progress').attributes['aria-valuenow'],undefined);
+ assert.equal(nodes.get('.campaign-progress').attributes['aria-valuemax'],undefined);
 });
 test('browser never shows a fake zero on errors, stale data, or invalid amounts',async()=>{
  for(const payload of [{status:'not_connected'},{status:'stale'},{status:'review_required'},{status:'ready',verifiedNetCents:'100'}]){
