@@ -5,13 +5,10 @@
   const fill = document.querySelector('[data-campaign-progress]');
   const status = document.querySelector('[data-tracking-status]');
   const details = document.querySelector('[data-tracking-details]');
-  if (!total || !bar || !fill || !status) return;
+  if (!total || !status) return;
   const money = cents => new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD', minimumFractionDigits: 2 }).format(cents / 100);
   function unavailable(message) {
     total.textContent = 'Pending verification';
-    fill.style.width = '0%';
-    bar.removeAttribute('aria-valuenow');
-    bar.setAttribute('aria-valuetext', message);
     status.textContent = message;
     if (details) details.textContent = '';
   }
@@ -38,15 +35,8 @@
           !Number.isSafeInteger(data.pendingNetCents) || data.pendingNetCents < 0 ||
           !Number.isSafeInteger(data.reserveCents) || data.reserveCents < 0 ||
           !Number.isInteger(data.reserveBps) || data.reserveBps < 0 || data.reserveBps > 10000 ||
-          !Number.isSafeInteger(data.targetCents) || data.targetCents <= 0 ||
           !Number.isFinite(Date.parse(data.updatedAt)) || Date.now() - Date.parse(data.updatedAt) > 35 * 60 * 1000) throw new Error('Invalid total');
       total.textContent = money(data.verifiedNetCents);
-      const targetCents = 58000000; // Full published TLWH Challenge target through Mission 4, Phase 2.
-      const bounded = Math.max(0, Math.min(targetCents, data.verifiedNetCents));
-      fill.style.width = `${bounded / targetCents * 100}%`;
-      bar.setAttribute('aria-valuemax', String(targetCents / 100));
-      bar.setAttribute('aria-valuenow', String(bounded / 100));
-      bar.setAttribute('aria-valuetext', `${money(data.verifiedNetCents)} estimated net toward the ${money(targetCents)} Long Way Home Challenge target`);
       status.textContent = `Updated ${new Date(data.updatedAt).toLocaleString('en-US')}. Automatic checks are scheduled every 15 minutes.`;
       if (details) details.textContent = `Pending settlement: ${money(data.pendingNetCents)} (not counted). Provisional reserve: ${data.reserveBps / 100}% (${money(data.reserveCents)}).`;
     } catch {

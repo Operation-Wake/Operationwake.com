@@ -42,7 +42,6 @@ window.OPERATION_WAKE = {
   },
   campaign: {
     progressEndpoint: "/api/campaign-progress",
-    knownMissionsTarget: 580000,
     paymentsLive: false,
     paymentStatus: "Live contributions",
     oneTimePaymentLink: "https://buy.stripe.com/8x27sN56fdphckB4io9EI00",
