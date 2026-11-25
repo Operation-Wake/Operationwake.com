@@ -2002,3 +2002,11 @@ footer {
 .captains-log-entry h3 { font-family: "Barlow Condensed",sans-serif; font-size: 2rem; margin: 0 0 .5rem; }
 .captains-log-date { color: #59616a; font-weight: 600; font-size: .9rem; margin-top: 0; }
 #game-plan,#first-passage { scroll-margin-top: 90px; }
+
+/* Passage photos and videos */
+.log-media { margin: 1.7rem 0; }
+.log-media img,.log-media video { display: block; width: 100%; height: auto; max-height: 650px; object-fit: contain; background: #061927; border-radius: 4px; }
+.log-media video { aspect-ratio: 16 / 9; }
+.log-media figcaption { font-size: .875rem; line-height: 1.6; color: #58616a; padding-top: .7rem; }
+.log-media figcaption a { text-decoration: underline; text-underline-offset: 3px; }
+@media (min-width: 1101px) and (max-width: 1500px) { .site-header { padding-inline: 24px; } .nav-links { gap: 16px; font-size: .72rem; } .brand { font-size: 1.05rem; gap: 8px; } }
