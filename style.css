@@ -1992,3 +1992,13 @@ footer {
 }
 
 .amount-options[hidden] { display: none; }
+
+/* Captain’s Log */
+.captains-log-intro,.captains-log-story { max-width: 780px; margin-inline: auto; }
+.captains-log-intro h2 { font-family: "Barlow Condensed",sans-serif; font-size: clamp(2.2rem,5vw,3.5rem); line-height: 1.05; }
+.captains-log-intro p,.captains-log-story p { line-height: 1.85; }
+.captains-log-update { font-size: .875rem; color: #58616a; margin-top: 1.5rem; }
+.captains-log-entry { padding-block: 1.7rem; border-bottom: 1px solid #d8d5cc; scroll-margin-top: 110px; }
+.captains-log-entry h3 { font-family: "Barlow Condensed",sans-serif; font-size: 2rem; margin: 0 0 .5rem; }
+.captains-log-date { color: #59616a; font-weight: 600; font-size: .9rem; margin-top: 0; }
+#game-plan,#first-passage { scroll-margin-top: 90px; }
