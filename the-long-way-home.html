@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
   <link href="style.css" rel="stylesheet" />
-</head>
+<style>#current-goal .route-table{width:100%;border-collapse:collapse;text-align:left;margin:24px 0;}#current-goal .route-table th,#current-goal .route-table td{padding:14px 18px;border-bottom:1px solid #53636e;}#current-goal .route-table caption{text-align:left;padding-bottom:14px;}#current-goal .home-goal-progress{margin:24px 0;}</style></head>
 <body class="inner-page campaign-page">
 <header class="site-header">
   <a aria-label="Operation Wake home" class="brand" href="index.html">
@@ -40,7 +40,7 @@
 <div class="section-heading"><p class="eyebrow">OUR CURRENT FUNDING GOAL</p><h2 id="current-goal-heading">Bring Big Trouble home · $4,000 working goal.</h2></div>
 <p>Big Trouble made it from Long Island to Norfolk. The next step is to repair her fuel system, complete the checks needed for the next passage, and bring our Catalina 36 to her planned home marina in Jacksonville, Florida.</p>
 <p>This gives us a specific task to work toward now: repairs and preparation in Norfolk, followed by the remaining trip home. Expected needs include repair parts, travel back to the boat, marina costs, fuel, and passage provisions. We’ll share the work and actual costs as they become clear.</p>
-<p><strong>Current goal: $4,000 to bring Big Trouble home.</strong> Help with fuel-system repairs, travel back to Norfolk, and the passage to Jacksonville. This is a working estimate; we’ll share actual costs and update the goal as repairs and preparations progress.</p>
+<div class="home-goal-progress"><p id="home-goal-progress-label" data-home-goal-label aria-live="polite">Progress pending verified contribution data.</p><progress data-home-goal-progress max="400000" aria-labelledby="home-goal-progress-label" hidden style="width:100%;height:24px;accent-color:#f2a51a;"></progress><p>Progress uses verified campaign-wide funds available after fees, adjustments, and the provisional reserve, including earlier contributions.</p></div><p><strong>Current goal: $4,000 to bring Big Trouble home.</strong> Help with fuel-system repairs, travel back to Norfolk, and the passage to Jacksonville. This is a working estimate; we’ll share actual costs and update the goal as repairs and preparations progress.</p>
 <div class="route-table-wrap" tabindex="0" role="region" aria-label="Big Trouble trip home working budget"><table class="route-table"><caption>Provisional trip-home budget · November 25, 2026</caption><thead><tr><th scope="col">Expense</th><th scope="col">Planning allowance</th></tr></thead><tbody>
 <tr><th scope="row">Fuel-system repairs, parts, and testing</th><td>$800</td></tr>
 <tr><th scope="row">Travel back to Norfolk and ground transportation</th><td>$500</td></tr>
@@ -99,6 +99,6 @@
 <script src="site-config.js"></script>
 <script src="script.js"></script>
 <script src="campaign.js"></script>
-<script src="campaign-progress.js"></script>
+<script src="campaign-progress.js?v=home-goal-1"></script>
 </body>
 </html>
