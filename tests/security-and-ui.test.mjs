@@ -48,9 +48,10 @@ test('older scans cannot overwrite newer snapshots; conditional conflict retries
  await saveSnapshot(store,{startedAt:400});
  assert.equal(attempts,2);
 });
-async function render(payload,ok=true){
+async function render(payload,ok=true,withHomeGoal=false){
  const nodes = new Map();
  for(const selector of ['[data-campaign-total]','.campaign-progress','[data-campaign-progress]','[data-tracking-status]','[data-tracking-details]']) nodes.set(selector,{textContent:'',style:{},attributes:{},setAttribute(k,v){this.attributes[k]=v;},removeAttribute(k){delete this.attributes[k];}});
+ if(withHomeGoal) for(const selector of ['[data-home-goal-progress]','[data-home-goal-label]']) nodes.set(selector,{textContent:'',hidden:true,attributes:{},setAttribute(k,v){this.attributes[k]=v;},removeAttribute(k){delete this.attributes[k];}});
  const context={window:{OPERATION_WAKE:{campaign:{}}},document:{querySelector:s=>nodes.get(s),addEventListener(){}},fetch:async()=>({ok,json:async()=>payload}),Intl,Date,Number,AbortController,setTimeout,clearTimeout,setInterval(){}};
  vm.runInNewContext(readFileSync('campaign-progress.js','utf8'),context);
  await new Promise(resolve=>setImmediate(resolve));
@@ -70,6 +71,21 @@ test('browser never shows a fake zero on errors, stale data, or invalid amounts'
  }
  const nodes=await render({},false);
  assert.equal(nodes.get('[data-campaign-total]').textContent,'Pending verification');
+});
+
+test('trip home progress uses verified net funds and hides unverified progress',async()=>{
+ const payload={status:'ready',currency:'usd',verifiedNetCents:682,pendingNetCents:10000,reserveCents:228,reserveBps:2500,updatedAt:new Date().toISOString()};
+ const nodes=await render(payload,true,true);
+ const bar=nodes.get('[data-home-goal-progress]');
+ assert.equal(bar.value,682); assert.equal(bar.max,400000); assert.equal(bar.hidden,false);
+ assert.match(nodes.get('[data-home-goal-label]').textContent,/\$6\.82.*\$4,000\.00.*0\.17%/);
+ const above=await render({...payload,verifiedNetCents:500000},true,true);
+ assert.equal(above.get('[data-home-goal-progress]').value,400000);
+ for(const invalid of [{status:'stale'},{...payload,updatedAt:'invalid'}]){
+  const missing=await render(invalid,true,true);
+  assert.equal(missing.get('[data-home-goal-progress]').hidden,true);
+  assert.match(missing.get('[data-home-goal-label]').textContent,/pending verified/);
+ }
 });
 
 test('internal token can be derived without storing a second credential', async()=>{
